@@ -1,0 +1,26 @@
+diff --git a/src/flash/nor/stm32f1x.c b/src/flash/nor/stm32f1x.c
+index c750ff080..a59da047c 100644
+--- a/src/flash/nor/stm32f1x.c
++++ b/src/flash/nor/stm32f1x.c
+@@ -765,7 +765,7 @@ static int stm32x_get_property_addr(struct target *target, struct stm32x_propert
+ 		return ERROR_OK;
+ 	case CORTEX_M4_PARTNO: /* STM32F3x devices */
+ 		addr->device_id = 0xE0042000;
+-		addr->flash_size = 0x1FFFF7CC;
++		addr->flash_size = 0x1FFFF7E0;
+ 		return ERROR_OK;
+ 	case CORTEX_M23_PARTNO: /* GD32E23x devices */
+ 		addr->device_id = 0x40015800;
+@@ -953,6 +953,12 @@ static int stm32x_probe(struct flash_bank *bank)
+ 		stm32x_info->default_rdp = 0xAA;
+ 		stm32x_info->can_load_options = true;
+ 		break;
++        case 0x347:
++		LOG_WARNING("Found 0x700 for AT32F403A");
++		page_size = 2048;
++		stm32x_info->ppage_size = 2;
++		max_flash_size_in_kb = 512;
++		break;
+ 	case 0x446: /* stm32f303xD/E */
+ 		page_size = 2048;
+ 		stm32x_info->ppage_size = 2;

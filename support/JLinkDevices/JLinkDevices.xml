@@ -1,0 +1,7 @@
+<DataBase>
+ <Device>
+    <ChipInfo Vendor="Artery" Name="AT32F403AxG" WorkRAMAddr="0x20000000" WorkRAMSize="0x18000" Core="JLINK_CORE_CORTEX_M4" />
+    <FlashBankInfo Name="Internal Flash Bank 1" BaseAddr="0x08000000" MaxSize="0x100000" Loader="AT/AT32F403A_1024.FLM" LoaderType="FLASH_ALGO_TYPE_OPEN" AlwaysPresent="1" />
+    <FlashBankInfo Name="QSPI SPIM Flash" BaseAddr="0x08400000" MaxSize="0x1000000" Loader="AT/AT32F403A_EXT_TYPE2_REAMP1_GENERAL.FLM" LoaderType="FLASH_ALGO_TYPE_OPEN" />
+  </Device>
+</DataBase>
