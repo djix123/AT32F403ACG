@@ -14,7 +14,7 @@ ii. Build firmware: ```cmake --build build --target all```
 
 i.  The project also demos the use of SPIM (QSPI SPI Flash eXecute-in-place). This requires the use of a flash loader that can flash to the SPIM (see further below for details)
 
-ii. To turn off the use of SPIM and use *only* the regular MCU flash, comment out the call to ```spim_init()``` in ```main.c```, and change the declaration of ```led_toggle()``` in ```board.h``` to use the declaration *without* ```__attribute___```
+ii. To turn off the use of SPIM and use *only* the regular MCU flash, comment out the call to ```spim_init()``` in ```main.c```, and change the declaration of ```led_toggle()``` in ```board.h``` to use the declaration *without* ```__attribute__```
 
 iii.  The SPI Flash used in the example is a Winbond W25Q128JV and the parameters set in ```spim_init()``` are appropriate for this memory part per the AT32F403A [datasheet](https://www.arterychip.com/en/product/AT32F403A.jsp#Resource) (Type 2).
 
