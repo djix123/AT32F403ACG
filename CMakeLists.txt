@@ -20,7 +20,7 @@ add_compile_options(-ffunction-sections -fdata-sections -fno-common -fmessage-le
 
 add_compile_options($<$<COMPILE_LANGUAGE:ASM>:-x$<SEMICOLON>assembler-with-cpp>)
 
-add_compile_options(-Og -g)
+add_compile_options(-O0 -g)
 
 include_directories(Inc Drivers/cmsis/cm4/core_support Drivers/cmsis/cm4/device_support
         Drivers/drivers/inc)
